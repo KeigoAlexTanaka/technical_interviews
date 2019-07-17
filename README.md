@@ -281,4 +281,14 @@ Note:
 S and J will consist of letters and have length at most 50.
 The characters in J are distinct.
 
-
+var numJewelsInStones = function(J, S) {
+    let counter=0;
+    for (i in J){
+        for (j in S){
+            if (J[i]==S[j]){
+                counter++;
+            }
+        }
+    }
+    return counter;
+};
