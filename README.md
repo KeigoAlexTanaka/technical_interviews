@@ -316,3 +316,16 @@ Note:
 
 The number of nodes in the tree is at most 10000.
 The final answer is guaranteed to be less than 2^31.
+
+SOLUTION IN PROGRESS:
+
+var rangeSumBST = function(root, L, R) {
+    let counter=0;
+    for (i in root){
+        console.log(root[i]);
+        if (root[i]>=L && root[i]<=R){
+            counter+=root[i];
+        }
+    }
+    return counter;
+};
