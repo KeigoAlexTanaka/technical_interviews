@@ -317,15 +317,21 @@ Note:
 The number of nodes in the tree is at most 10000.
 The final answer is guaranteed to be less than 2^31.
 
-SOLUTION IN PROGRESS:
+SOLUTION (DEPTH FIRST SEARCH):
 
 var rangeSumBST = function(root, L, R) {
-    let counter=0;
-    for (i in root){
-        console.log(root[i]);
-        if (root[i]>=L && root[i]<=R){
-            counter+=root[i];
-        }
+    let sum = 0;
+    if(root == null) {
+        return 0;
     }
-    return counter;
+    if(L <= root.val && root.val <= R) {
+        sum = root.val;
+    }
+    if(L <= root.val || R <= root.val) {
+       sum += rangeSumBST(root.left, L, R);
+   } 
+   if(root.val <= L || root.val <= R){
+       sum += rangeSumBST(root.right, L, R);
+   }
+    return sum;
 };
