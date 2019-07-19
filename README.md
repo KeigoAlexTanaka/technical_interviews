@@ -719,3 +719,74 @@ var diStringMatch = function(S) {
     }
     return output;
 };
+
+https://leetcode.com/problems/unique-email-addresses/
+
+929. Unique Email Addresses
+
+Every email consists of a local name and a domain name, separated by the @ sign.
+
+For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name.
+
+Besides lowercase letters, these emails may contain '.'s or '+'s.
+
+If you add periods ('.') between some characters in the local name part of an email address, mail sent there will be forwarded to the same address without dots in the local name.  For example, "alice.z@leetcode.com" and "alicez@leetcode.com" forward to the same email address.  (Note that this rule does not apply for domain names.)
+
+If you add a plus ('+') in the local name, everything after the first plus sign will be ignored. This allows certain emails to be filtered, for example m.y+name@email.com will be forwarded to my@email.com.  (Again, this rule does not apply for domain names.)
+
+It is possible to use both of these rules at the same time.
+
+Given a list of emails, we send one email to each address in the list.  How many different addresses actually receive mails? 
+
+ 
+
+Example 1:
+
+Input: ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
+Output: 2
+Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually receive mails
+ 
+
+Note:
+
+1 <= emails[i].length <= 100
+1 <= emails.length <= 100
+Each emails[i] contains exactly one '@' character.
+All local and domain names are non-empty.
+Local names do not start with a '+' character.
+
+https://leetcode.com/problems/peak-index-in-a-mountain-array/
+
+852. Peak Index in a Mountain Array
+
+Let's call an array A a mountain if the following properties hold:
+
+A.length >= 3
+There exists some 0 < i < A.length - 1 such that A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] > ... > A[A.length - 1]
+Given an array that is definitely a mountain, return any i such that A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] > ... > A[A.length - 1].
+
+Example 1:
+
+Input: [0,1,0]
+Output: 1
+Example 2:
+
+Input: [0,2,1,0]
+Output: 1
+Note:
+
+3 <= A.length <= 10000
+0 <= A[i] <= 10^6
+A is a mountain, as defined above.
+
+SOLUTION:
+
+var peakIndexInMountainArray = function(A) {
+    let B = [];
+    for (i in A){
+        B.push(A[i]);
+    }
+    B.sort(function(a, b){return b - a})
+    let max = B[0];
+    return A.indexOf(max);
+};
