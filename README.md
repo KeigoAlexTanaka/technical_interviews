@@ -694,3 +694,28 @@ var selfDividingNumbers = function(left, right) {
     }
     return output;
 };
+
+SOLUTION: 
+
+var diStringMatch = function(S) {
+    let min = 0;
+    let max = S.length;
+    let output = [];
+    for ( i in S ){
+        if (S[i] == "I"){
+            output.push(min);
+            min++;
+        }
+        if (S[i] == "D"){
+            output.push(max);
+            max--;
+        }
+    }
+    if (S[S.length-1]=="I"){
+        output.push(max);
+    }
+    if (S[S.length-1]=="D"){
+        output.push(min);
+    }
+    return output;
+};
