@@ -633,3 +633,30 @@ Example 2:
 Input: "LL"
 Output: false
 Explanation: The robot moves left twice. It ends up two "moves" to the left of the origin. We return false because it is not at the origin at the end of its moves.
+
+SOLUTION:
+
+var judgeCircle = function(moves) {
+    let x = 0;
+    let y = 0;
+    for ( i in moves ) {
+        if (moves[i] == "U"){
+            y++;
+        }
+        if (moves[i] == "D"){
+            y--;
+        }
+        if (moves[i] == "L"){
+            x--;
+        }
+        if (moves[i] == "R"){
+            x++;
+        }
+    }
+    if (x==0&&y===0){
+        return true;
+        }
+    else{
+        return false;
+    }
+};
