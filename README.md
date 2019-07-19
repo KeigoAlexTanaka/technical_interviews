@@ -605,3 +605,8 @@ Note:
 1 <= A.length <= 10000
 -10000 <= A[i] <= 10000
 A is sorted in non-decreasing order.
+
+var sortedSquares = function(A) {  
+    let B = A.map((n)=>Math.pow(n,2));
+    return B.sort(function(a, b){return a-b});
+};
