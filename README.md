@@ -531,3 +531,18 @@ Note:
 1 <= A.length <= 5000
 0 <= A[i] <= 5000
 
+var sortArrayByParity = function(A) {
+    let output = [];
+    let even= [];
+    let odd= [];
+    for ( i in A ) {
+        if (A[i]%2==0){
+            even.push(A[i]);
+        }
+        if (A[i]%2==1){
+            odd.push(A[i]);
+        }
+    }
+    output = even.concat(odd);
+    return output;
+};
