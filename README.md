@@ -680,3 +680,17 @@ Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]
 Note:
 
 The boundaries of each input argument are 1 <= left <= right <= 10000.
+
+SOLUTION:
+
+var selfDividingNumbers = function(left, right) {
+    let output=[];
+    let array = [];
+    for (let i=left;i<=right;i++){
+        array=(""+i).split("")
+        if (array.every((n)=>i%n==0)) {
+            output.push(i);
+        }
+    }
+    return output;
+};
