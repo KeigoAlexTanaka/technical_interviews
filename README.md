@@ -904,3 +904,14 @@ We reveal 13, and move 17 to the bottom.  The deck is now [17].
 We reveal 17.
 Since all the cards revealed are in increasing order, the answer is correct.
 
+SOLUTION IN PROGRESS:
+
+var deckRevealedIncreasing = function(deck) {
+    let sort = deck.sort(function(a, b){return a-b});
+    let output = [];
+    for ( let i=0; i<=(sort.length)/2; i++) {
+        output.push(sort[i]);
+        output.push(sort[i+sort.length/2]);
+    }
+    return output;
+};
