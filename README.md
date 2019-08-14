@@ -915,3 +915,19 @@ var deckRevealedIncreasing = function(deck) {
     }
     return output;
 };
+
+https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
+
+Sock Merchant
+
+function sockMerchant(n, ar) {
+  let counts = {};
+  let counter = 0;
+  ar.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+  
+  Object.keys(counts).forEach(function (item) {
+    counter+=Math.floor(counts[item]/2);
+  })
+  return counter;
+  console.log(counter);
+}
